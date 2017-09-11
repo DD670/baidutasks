@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 400px;
+    height: 200px;
+    background-color: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -100px;
+    overflow: hidden;
+}
+.inner-top,.inner-bottom{
+    width: 100px;
+    height: 100px;
+    background-color: #fc0;
+    border-radius: 50%;
+    position: absolute;
+}
+.inner-top{
+    top: -50px;
+    left: -50px;
+}
+.inner-bottom{
+    right: -50px;
+    bottom: -50px;
+}
