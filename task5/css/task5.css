@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 16px;
+    background-color: #ddd;
+}
+/* 头部样式 */
+.header{
+    box-sizing: border-box;
+    width: 100% ;
+    padding-left: 40px;
+    height: 60px;
+    background-color: #333333;
+}
+.header:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.header img{
+    width: 120px;
+    float: left;
+}
+.header ul{
+    float: right;
+}
+.header ul li{
+    margin: 0 20px;
+    float: left;
+    line-height: 60px;
+}
+.header ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+/* 尾部样式 */
+.footer{
+    width: 100%;
+    height: 70px;
+    background-color: #333;
+}
+.footer p{
+    text-align: center;
+    color: #fff;
+    line-height: 70px;
+}
+
+
+
+/* 抽取样式类 */
+
+/* 内容样式 */
+.content{
+    box-sizing: border-box;
+    //width: 100%;
+    margin-right: 425px;
+    padding: 20px 20px 0 20px;
+}
+.content .text1,.text2,.text3,.text4,.text5{
+    padding: 20px 20px 30px 20px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+.text1,.text2 {
+    line-height: 2em;
+}
+.content span{
+    font-size: 14px;
+}
+.content div p{
+    text-indent: 2em;
+}
+
+.text2 ul{
+    text-indent: 1em;
+    list-style: none;
+}
+
+.text3 div{
+    text-align: center;
+    width: 120px;
+    height: 125px;
+    margin: 10px;
+    padding: 10px 10px 8px 10px;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+.text3 p{
+    text-indent: 0 !important;
+    margin-bottom: 5px;
+}
+.text3 img{
+    width: 100px;
+}
+
+.text4 ol li{
+    margin: 10px 0 10px 40px;
+}
+.text4 p{
+    text-indent: 0 !important;
+}
+
+.text4 th{
+    text-align: left;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+}
+.text4 td{
+    padding: 5px;
+    background-color: #fff;
+}
+
+.text5{
+    width: 365px;
+    float: right;
+    margin: 20px 20px 0 0;
+}
+.text5 h3{
+    border-left: 2px solid #ccc;
+    text-indent: 0.5em;
+}
+.text5 table{
+    width: 100%;
+    line-height: 2em;
+}
+.text5 tr>td:nth-child(1){
+    text-align: right;
+    padding-right: 1em;
+}
+.text5 input[type=radio]{
+    margin: 0 5px;
+}
+.text5 input[type=checkbox]{
+    margin: 0 5px;
+}
+.text5 input[type=submit]{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #3355d0;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+}
