@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="aqi-list" style="list-style: none">
+    <!--
+        <li>第一名：福州（样例），10</li>
+          <li>第二名：福州（样例），10</li> -->
+</ul>
+<script>
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+
+    (function() {
+        var ul = document.getElementById("aqi-list");
+        /*
+         在注释下方编写代码
+         遍历读取aqiData中各个城市的数据
+         将空气质量指数大于60的城市显示到aqi-list的列表中
+         */
+        var numData = ["一","二","三","四","五","六"];
+        /* 冒泡排序 实现按城市得分由大到小排
+         for (var i=0;i<aqiData.length;i++){
+         var value;
+         for(var j = 0;j<aqiData.length-1;j++){
+         if(aqiData[j][1]<aqiData[j+1][1]){
+         value = aqiData[j];
+         aqiData[j] = aqiData[j+1];
+         aqiData[j+1] = value
+         }
+         }
+         }
+         */
+
+        /* 按城市得分排序 */
+        aqiData.sort(function (a,b) {
+            return b[1] - a[1]
+        });
+        console.log(aqiData);
+        for (var i=0;i<aqiData.length;i++){
+            var li = document.createElement("li");
+            if(aqiData[i][1] > 60){
+                li.innerHTML = "第"+numData[i]+"名,"+aqiData[i][0]+","+aqiData[i][1];
+                ul.appendChild(li)
+            }
+        }
+    })();
+</script>
+</body>
+</html>
