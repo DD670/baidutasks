@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    min-width: 1280px;
+}
+/* 头部样式 */
+.header{
+    height: 59px;
+    line-height: 59px;
+    padding: 0 59px;
+}
+.header>img{
+    float: left;
+    margin-top: 14px;
+    margin-right: 8px;
+}
+.header span{
+    float: left;
+    font-family: 黑体;
+    font-size: 21px;
+}
+.header ul{
+    float: right;
+    list-style: none;
+}
+.header ul li{
+    width: 65px;
+    height: 54px;
+    text-align: center;
+    float: left;
+    margin-left: 30px;
+}
+.header ul li a{
+    display: block;
+    width: 65px;
+    height: 54px;
+    font-size: 14px;
+    color: #787b83;
+    font-family: 微软雅黑;
+}
+.header ul li:nth-child(1) a{
+    border-bottom: 5px solid #e74f4d;
+}
+.header ul li:nth-child(6) a{
+    color: #e74f4d;
+}
+/*.header ul li:hover{
+    border-bottom: 5px solid #e74f4d;
+}*/
+
+/* banner 样式*/
+.banner{
+    width: 100%;
+    height: 654px;
+    background: url("../img/banner.jpg") 0 0 no-repeat;
+    background-size: cover;
+    position: relative;
+    //margin-top: 5px;
+}
+.banner .banner-mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+.banner .banner-text{
+    position: absolute;
+    top: 222px;
+    left: 114px;
+}
+.banner .banner-text p:nth-child(1){
+    font-family: 微软雅黑;
+    font-size: 60px;
+    width: 461px;
+    height: 72px;
+    line-height: 72px;
+    color: #fff;
+}
+.banner .banner-text p:nth-child(2){
+    width: 298px;
+    height: 61px;
+    line-height: 30px;
+    font-family: 微软雅黑;
+    font-size: 21px;
+    color: #fff;
+    margin-top: 11px;
+}
+.banner .banner-text a{
+    display: block;
+    width: 331px;
+    height: 65px;
+    line-height: 65px;
+    background-color: #e74f4d;
+    border: none;
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-top: 60px;
+}
+
+/* main样式 */
+.main{
+
+}
+.main .main-icon{
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.main-icon ul{
+    
+}
+.main-icon ul li{
+    width: 25%;
+    height: 250px;
+    list-style: none;
+    float: left;
+}
+.main-icon ul li img,span{
+    display: block;
+}
+.main-icon ul li img:nth-of-type(2){
+    position: absolute;
+    top: 132px;
+}
+.main-icon ul li:nth-child(1) img:nth-of-type(2){
+    left: 25%;
+}
+.main-icon ul li:nth-child(2) img:nth-of-type(2){
+    left: 50%;
+}
+.main-icon ul li:nth-child(3) img:nth-of-type(2){
+    left: 75%;
+}
+
+.main-icon ul li img:nth-of-type(1){
+    margin: 44px auto;
+}
+.main-icon ul li span{
+    width: 158px;
+    height: 38px;
+    font-size: 14px;
+    font-family: 黑体;
+    color: #767677;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main-newWorld{
+    width: 100%;
+    height: 361px;
+    box-sizing: border-box;
+    background-color: #edecec;
+    text-align: center;
+}
+.main-newWorld img{
+    margin-top: 82px;
+}
+.main-newWorld p{
+    margin-top: 50px;
+    font-size: 54px;
+    font-family: 黑体;
+    color: rgba(50,50,50,0.5);
+}
+
+.main .main-map{
+    width: 100%;
+    height: 341px;
+    background: url("../img/main-map.jpg") 0 0 no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    position: relative;
+}
+.main .main-map .main-map-mask{
+    width: 100%;
+    height: 341px;
+    background-color: rgba(190,79,72,0.2);
+}
+.main .main-map .main-map-content{
+    position: absolute;
+    top: 53px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+}
+.main .main-map .main-map-content p:nth-of-type(1){
+    font-family: 微软雅黑;
+    font-size: 21px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.main .main-map .main-map-content p:nth-of-type(2){
+    font-family: 微软雅黑;
+    font-size: 12px;
+    color: #fff;
+    margin-top: 18px;
+    margin-bottom: 52px;
+}
+.main .main-map .main-map-content select,a{
+    width: 236px;
+    height: 36px;
+    margin: 2%;
+}
+.main .main-map .main-map-content a{
+    background-color: #bf4f48;
+    font-size: 14px;
+    font-family: 微软雅黑;
+    color: #fff;
+    line-height: 36px;
+}
+.main .main-map .main-map-content select{
+    appearance:none;
+    font-size: 12px;
+    font-family: 微软雅黑;
+    color: #a8a9aa;
+    padding-left: 10px;
+}
+.main .main-map .main-map-content select option{
+    background-color: #e3e2e4;
+    color: #323232;
+}
