@@ -2,9 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        span{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            color: #fff;
+            line-height: 50px;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
-$END$
+<!--
+    拟一个队列，队列的每个元素是一个数字，初始队列为空
+有一个input输入框，以及4个操作按钮
+
+点击"左侧入"，将input中输入的数字从左侧插入队列中；
+点击"右侧入"，将input中输入的数字从右侧插入队列中；
+点击"左侧出"，读取并删除队列左侧第一个元素，并弹窗显示元素中数值；
+点击"右侧出"，读取并删除队列又侧第一个元素，并弹窗显示元素中数值；
+点击队列中任何一个元素，则该元素会被从队列中删除
+-->
+<input type="text" id="input">
+<div style="display: inline-block" id="btn">
+    <button id="left-in">左侧入</button>
+    <button id="right-in">右侧入</button>
+    <button id="left-out">左侧出</button>
+    <button id="right-out">右侧出</button>
+</div>
+
+<div id="box">
+
+</div>
+<script>
+    var box = document.getElementById("box");
+    /* 获取数据的方法*/
+    function getValue() {
+        var input = document.getElementById("input");
+        var value = input.value;
+        // 判断输入合法性
+        function validate(value){
+            var reg =  /^[0-9]*$/ ;
+            return reg.test(value);
+        }
+        if(validate(value) && value !=""){
+          return value
+        }
+        else {
+            alert("请输入整数数字");
+        }
+    }
+    /* 渲染的方法 */
+    function rightIn() {
+        var span = document.createElement("span");
+        span.innerHTML = getValue();
+        box.appendChild(span);
+    }
+    function leftIn() {
+        var span = document.createElement("span");
+        span.innerHTML = getValue();
+        box.insertBefore(span,box.firstChild);
+    }
+    function leftOut() {
+        var tag = box.firstChild;
+        var value = tag.innerHTML;
+        alert(value);
+        box.removeChild(box.firstChild);
+    }
+    function rightOut() {
+        var tag = box.lastChild;
+        var value = tag.innerHTML;
+        alert(value);
+        box.removeChild(box.lastChild);
+    }
+    /* 初始化方法 */
+    function init() {
+        var left_in = document.getElementById("left-in");
+        var right_in = document.getElementById("right-in");
+        var left_out = document.getElementById("left-out");
+        var right_out = document.getElementById("right-out");
+        left_in.onclick = leftIn;
+        right_in.onclick = rightIn;
+        left_out.onclick = leftOut;
+        right_out.onclick = rightOut;
+        box.onclick = function (e) {
+           box.removeChild(e.target)
+        }
+    }
+    init();
+
+    /* 思路二：用一个数组保存所有的span，进入移出的新标签根据新数据添加到数组时的方向渲染，特别注意移出的时候，要先清空页面当前的标签，再调用渲染方法。
+    var left_in = document.getElementById("left-in");
+    var right_in = document.getElementById("right-in");
+    var left_out = document.getElementById("left-out");
+    var right_out = document.getElementById("right-out");
+    var tag = [];
+    left_in.onclick = function () {
+        tag.unshift(create());
+        render(tag)
+    };
+    right_in.onclick = function () {
+        tag.push(create());
+        render(tag);
+    };
+    left_out.onclick = function () {
+        box.innerHTML = "";
+        tag.shift();
+        render(tag)
+    };
+    right_out.onclick = function () {
+        box.innerHTML = "";
+        tag.pop();
+        render(tag)
+    };
+    box.onclick = function (e) {
+        box.removeChild(e.target);
+    };
+    function create() {
+        var span = document.createElement("span");
+        span.innerHTML = getValue();
+        return span
+    }
+    function render(arr) {
+        for (var i=0;i<arr.length;i++){
+            box.appendChild(arr[i]);
+        }
+    }*/
+
+</script>
 </body>
 </html>
