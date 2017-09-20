@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            width: 30px;
+            //height: 50px;
+            background-color: red;
+            color: #fff;
+            //line-height: 50px;
+            font-size: 5px;
+            display: inline-block;
+            text-align: center;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<!--
+    拟一个队列，队列的每个元素是一个数字，初始队列为空
+有一个input输入框，以及4个操作按钮
+
+点击"左侧入"，将input中输入的数字从左侧插入队列中；
+点击"右侧入"，将input中输入的数字从右侧插入队列中；
+点击"左侧出"，读取并删除队列左侧第一个元素，并弹窗显示元素中数值；
+点击"右侧出"，读取并删除队列又侧第一个元素，并弹窗显示元素中数值；
+点击队列中任何一个元素，则该元素会被从队列中删除
+
+
+基于上一任务
+限制输入的数字在10-100
+队列元素数量最多限制为60个，当超过60个时，添加元素时alert出提示
+队列展现方式变化如图，直接用高度表示数字大小
+实现一个简单的排序功能，如冒泡排序（不限制具体算法），用可视化的方法表达出来，参考见下方参考资料
+-->
+<input type="text" id="input">
+<div style="display: inline-block" id="btn">
+    <button id="left-in">左侧入</button>
+    <button id="right-in">右侧入</button>
+    <button id="left-out">左侧出</button>
+    <button id="right-out">右侧出</button>
+</div>
+<div id="box"></div>
+<button id="sortBtn">排序</button>
+<script>
+    /* 获取标签 */
+    var box = document.getElementById("box");
+    var left_in = document.getElementById("left-in");
+    var right_in = document.getElementById("right-in");
+    var left_out = document.getElementById("left-out");
+    var right_out = document.getElementById("right-out");
+    var input = document.getElementById("input");
+    var sortBtn = document.getElementById("sortBtn");
+    var num = 1;
+    /* 添加*/
+    function spanIn(btn) {
+        var value = input.value;
+        if(!value || (value < 10) || (value >100) || isNaN(value)){
+            alert("请输入10-100之间的数字");
+            return
+        }
+        if(num>100){
+            alert("最多输入10个");
+            return;
+        }
+        var span = document.createElement("span");
+        if(btn.id == "left-in"){
+            box.insertBefore(span,box.firstChild);
+        }else {
+            box.appendChild(span)
+        }
+        //span.innerHTML = value;
+        span.style.height = value + "px";
+        num++;
+        input.value = ""
+    }
+    /* 删除 */
+    function spanOut(btn,wrap) {
+        if(wrap.children.length){
+            if(btn.id == "left-out"){
+                var first = box.firstChild;
+                var text = parseInt(first.style.height);
+                box.removeChild(first);
+                alert(text);
+            }
+            else {
+                var last = box.lastChild;
+                text = parseInt(last.style.height);
+                box.removeChild(last);
+                alert(text);
+            }
+            num--;
+        }else {
+            alert("队列已清空");
+            return 0;
+        }
+    }
+    /* 排序 */
+    function bubbleSort() {
+        var spanList = box.children;
+        for (var i = 0;i<spanList.length;i++){
+            setTimeout(function () {
+                for(var j = 0;j<spanList.length-1;j++){
+                    if(spanList[j].style.height > spanList[j+1].style.height){
+                        var height = spanList[j].style.height;
+                        spanList[j].style.height = spanList[j+1].style.height;
+                        spanList[j+1].style.height = height;
+                    }
+                }
+            },i*1000)
+        }
+    }
+    /* 绑定事件 */
+    left_in.onclick = function () {
+            spanIn(this)
+        };
+    right_in.onclick = function () {
+            spanIn(this)
+        };
+    left_out.onclick = function () {
+            spanOut(this,box)
+        };
+    right_out.onclick = function () {
+            spanOut(this,box)
+        };
+    box.onclick = function (e) {
+            box.removeChild(e.target)
+        };
+    sortBtn.onclick = function () {
+            bubbleSort()
+        };
+</script>
+</body>
+</html>

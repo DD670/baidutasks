@@ -51,7 +51,7 @@
             return reg.test(value);
         }
         if(validate(value) && value !=""){
-          return value
+            return value
         }
         else {
             alert("请输入整数数字");
@@ -91,48 +91,48 @@
         left_out.onclick = leftOut;
         right_out.onclick = rightOut;
         box.onclick = function (e) {
-           box.removeChild(e.target)
+            box.removeChild(e.target)
         }
     }
     init();
 
     /* 思路二：用一个数组保存所有的span，进入移出的新标签根据新数据添加到数组时的方向渲染，特别注意移出的时候，要先清空页面当前的标签，再调用渲染方法。
-    var left_in = document.getElementById("left-in");
-    var right_in = document.getElementById("right-in");
-    var left_out = document.getElementById("left-out");
-    var right_out = document.getElementById("right-out");
-    var tag = [];
-    left_in.onclick = function () {
-        tag.unshift(create());
-        render(tag)
-    };
-    right_in.onclick = function () {
-        tag.push(create());
-        render(tag);
-    };
-    left_out.onclick = function () {
-        box.innerHTML = "";
-        tag.shift();
-        render(tag)
-    };
-    right_out.onclick = function () {
-        box.innerHTML = "";
-        tag.pop();
-        render(tag)
-    };
-    box.onclick = function (e) {
-        box.removeChild(e.target);
-    };
-    function create() {
-        var span = document.createElement("span");
-        span.innerHTML = getValue();
-        return span
-    }
-    function render(arr) {
-        for (var i=0;i<arr.length;i++){
-            box.appendChild(arr[i]);
-        }
-    }*/
+     var left_in = document.getElementById("left-in");
+     var right_in = document.getElementById("right-in");
+     var left_out = document.getElementById("left-out");
+     var right_out = document.getElementById("right-out");
+     var tag = [];
+     left_in.onclick = function () {
+     tag.unshift(create());
+     render(tag)
+     };
+     right_in.onclick = function () {
+     tag.push(create());
+     render(tag);
+     };
+     left_out.onclick = function () {
+     box.innerHTML = "";
+     tag.shift();
+     render(tag)
+     };
+     right_out.onclick = function () {
+     box.innerHTML = "";
+     tag.pop();
+     render(tag)
+     };
+     box.onclick = function (e) {
+     box.removeChild(e.target);
+     };
+     function create() {
+     var span = document.createElement("span");
+     span.innerHTML = getValue();
+     return span
+     }
+     function render(arr) {
+     for (var i=0;i<arr.length;i++){
+     box.appendChild(arr[i]);
+     }
+     }*/
 
 </script>
 </body>
